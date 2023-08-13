@@ -1,0 +1,6 @@
+ram=10^6;
+z[x]=(1/(2*Pi^2))*Integrate[Sqrt[k^2+2*k*x]*(k+x)/(Exp[k+x]+1),{k,0,Infinity}];
+ode1={y'[x]+ram*(y[x]^2-z[x]^2)/x^2==0,y[0.1]==3*Zeta[3]/(4*Pi^2)};
+sol=NDSolve[ode1,y,{x,0.1,1000}];
+LogLogPlot[y[x]/.sol,{x,0.1,1000}]
+(*run time error*)
