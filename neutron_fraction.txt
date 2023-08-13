@@ -1,4 +1,0 @@
-hub=1.13;
-ode1={y'[x]-(225*(12+6*x+x^2)/(887*x^5))*x*(Exp[-x]-y[x]*(1+Exp[-x]))/hub==0,y[0.01]==0.5};
-sol=NDSolve[ode1,y,{x,0.01,100}];
-LogLinearPlot[y[x]/.sol,{x,0.01,100},PlotRange->{{0.01,100},{0,0.6}},AxesLabel->{"x","X_n"}]
